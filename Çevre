@@ -1,0 +1,30 @@
+import os
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+@bot.command()
+async def sa(ctx):
+    await ctx.send(f"as birader")
+
+@bot.command()
+async def neyaparim(ctx):
+    await ctx.send(f'Dostlar! Bu atıklar için basit başlayabilirsin! Mesela evdeki plastikleri normal çöpe atmaktansa geri dönüşüme at! Ya da bahçeni hep temiz bırak! Bunlar iyi çözümler.')
+
+@bot.command()
+async def ornek(ctx):
+    await ctx.send(f"Mesela bir Pilli saat düşünün. Saatinize bakarken birden saatinizin durduğunu fark ettiniz! Çünkü pili bitti. İşte bu tarz durumlar için şarj edilebilir pilleri şarj eden bir araç düşleyin. Hiç güzel olmaz mıydı? Bir düşün...")
+
+@bot.command()
+async def ornek2(ctx):
+    await ctx.send(f"Tamam, ya da mesela bir fırsat kampanysı tarzı bir şey yapılır ve... BEDAVA LAĞIM VE FABRİKA FİLTRELERİ. DÜNYAMIZ TEKRAR GÜZEL OLUCAK!")
+
+bot.run("")
